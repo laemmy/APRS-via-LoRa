@@ -1,5 +1,5 @@
 # APRS-via-LoRa-Gateway
-This script is forwarding received APRS-Packets to APRS-IS (http://www.aprs-is.net/). It was written in five minutes because I need the simple way to check the range of the LoRa-Modems which I have bought. 
+This script is forwarding received APRS-Packets to APRS-IS (http://www.aprs-is.net/). It was written in five minutes because I need a simple way to check the range of the LoRa-Modems which I have bought. 
 
 # Quickstart
 
