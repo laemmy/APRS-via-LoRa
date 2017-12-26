@@ -7,7 +7,7 @@ This script is written in Python and is using **aprslib**. Please install it wit
   
     pip install aprslib
   
-After that please download the script and make it executable.
+Download the script and make it executable.
 
     wget https://raw.githubusercontent.com/laemmy/APRS-via-LoRa-Gateway/master/igate.py
     chmod +x
