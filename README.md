@@ -10,7 +10,7 @@ This script is written in Python and is using **aprslib**. Please install this l
 Download the script and make it executable.
 
     wget https://raw.githubusercontent.com/laemmy/APRS-via-LoRa-Gateway/master/igate.py
-    chmod +x
+    chmod +x igate.py
   
 After that please open **igate.py** with the editor of your choice and enter your *callsign*, *passcode* and the *devicename* of your serial interface.
 
