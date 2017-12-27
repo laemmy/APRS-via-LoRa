@@ -1,0 +1,3 @@
+[DEFAULT]
+Callsign = N0CALL
+Passcode = 123456
