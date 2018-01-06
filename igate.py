@@ -5,7 +5,6 @@ import signal
 import sys
 from configparser import ConfigParser
 
-
 try:
     with open('config.txt') as file:
         pass
@@ -13,14 +12,11 @@ except IOError as e:
     print ("config.txt does not exist.")
     exit()
 
-
-
 config = ConfigParser()
 config.read('config.txt')
 callsign = config.get('DEFAULT', 'Callsign')
 passcode = config.get('DEFAULT', 'Passcode')
 interface = config.get('DEFAULT', 'Interface')
-
 
 def signal_handler(signal, iframe):
     print ('Igate stopped....')
