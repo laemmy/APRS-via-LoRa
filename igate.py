@@ -3,14 +3,24 @@ import serial
 import aprslib
 import signal
 import sys
-import io
 from configparser import ConfigParser
+
+
+try:
+    with open('config.txt') as file:
+        pass
+except IOError as e:
+    print ("config.txt does not exist.")
+    exit()
+
+
 
 config = ConfigParser()
 config.read('config.txt')
 callsign = config.get('DEFAULT', 'Callsign')
-passcode = config.get('DEFAULT','Passcode')
-interface = config.get('DEFAULT','Interface')
+passcode = config.get('DEFAULT', 'Passcode')
+interface = config.get('DEFAULT', 'Interface')
+
 
 def signal_handler(signal, iframe):
     print ('Igate stopped....')
@@ -28,4 +38,3 @@ while True:
     data_raw = ser.readline().decode("utf-8")
     print(data_raw)
     AIS.sendall(str(data_raw))
-
