@@ -1,25 +1,27 @@
 # APRS-via-LoRa-Gateway
-This script is forwarding received APRS-Packets to APRS-IS (http://www.aprs-is.net/). It was written in five minutes because I need a simple way to check the range of the LoRa-Modems which I have bought. 
+This script is forwarding received APRS-Packets to APRS-IS (http://www.aprs-is.net/). It was written because I need a simple way to check the range of the LoRa Data Radio Modems DRF1278DM.
 
 # Quickstart
 
-This script is written in Python and is using **aprslib**. Please install this library with the following command.
-  
-    pip install aprslib
-  
-Download the script and make it executable.
+Connect a DRF1278DM or similiar device to a computer or Raspberry Pi. 
 
-    wget https://raw.githubusercontent.com/laemmy/APRS-via-LoRa-Gateway/master/igate.py
-    chmod +x igate.py
-  
-After that please open **igate.py** with the editor of your choice and enter your *callsign*, *passcode* and the *devicename* of your serial interface.
+Clone repository and copy configuration template.
 
+	git clone https://github.com/laemmy/APRS-via-LoRa-Gateway.git
+	cp config-template.txt config.txt
+
+Edit **config.txt** and enter your Callsign, APRS-IS passcode and serial interface. 
+
+This script is written for Python 3 and using **aprslib**. Please install this library with the following command.
+  
+    pip3 install aprslib
+ 
 To start just enter
 
     ./igate.py
-  
+
+The **igate.py** print all recieved packets to **stdout** and forward them to the APRS-IS. At the moment there is no daemon mode. Please use **screen** to run it in background.
+
 To quit just press **CONTROL+C**
-
-
   
 
