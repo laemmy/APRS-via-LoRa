@@ -1,12 +1,19 @@
-#!/usr/bin/python
-import serial,aprslib,signal,sys
+#!/usr/bin/env python3
+import serial
+import aprslib
+import signal
+import sys
+import io
+from configparser import ConfigParser
 
-callsign = "N0CALL"       # enter your callsign (SSID is optional)
-passcode = "123456"          # enter your passcode (grab it here https://apps.magicbug.co.uk/passcode/index.php)
-interface= "/dev/ttyS0"     # choose your serial port (grab it with dmesg)
+config = ConfigParser()
+config.read('config.txt')
+callsign = config.get('DEFAULT', 'Callsign')
+passcode = config.get('DEFAULT','Passcode')
+interface = config.get('DEFAULT','Interface')
 
-def signal_handler(signal, frame):
-    print 'Igate stopped.'
+def signal_handler(signal, iframe):
+    print ('Igate stopped....')
     sys.exit(0)
 signal.signal(signal.SIGINT, signal_handler)
 
@@ -16,8 +23,9 @@ ser.flushOutput()
 
 AIS = aprslib.IS(callsign, passcode, port=14580)
 AIS.connect()
-print 'Igate started'
+print ('Igate started ...')
 while True:
-  data_raw = ser.readline()
-  print("IGATE " + data_raw)
-  AIS.sendall(data_raw)
+    data_raw = ser.readline().decode("utf-8")
+    print(data_raw)
+    AIS.sendall(str(data_raw))
+

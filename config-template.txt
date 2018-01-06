@@ -1,3 +1,4 @@
 [DEFAULT]
 Callsign = N0CALL
 Passcode = 123456
+Interface = /dev/ttyS0
