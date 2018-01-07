@@ -7,8 +7,6 @@ import signal
 import sys
 from gps3 import gps3
 
-import serial
-
 try:
     with open('config.txt') as file:
         pass
