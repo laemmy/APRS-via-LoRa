@@ -18,6 +18,7 @@ callsign = config.get('DEFAULT', 'Callsign')
 passcode = config.get('DEFAULT', 'Passcode')
 interface = config.get('DEFAULT', 'Interface')
 
+
 def signal_handler(signal, iframe):
     print ('Igate stopped....')
     sys.exit(0)
