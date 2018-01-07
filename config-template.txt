@@ -2,3 +2,4 @@
 Callsign = N0CALL
 Passcode = 123456
 Interface = /dev/ttyS0
+TrackerSSID = N0CALL-5
