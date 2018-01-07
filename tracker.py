@@ -7,9 +7,7 @@ import signal
 import sys
 from gps3 import gps3
 
-
 import serial
-
 
 try:
     with open('config.txt') as file:
@@ -26,12 +24,10 @@ interface = config.get('DEFAULT', 'Interface')
 
 ser = serial.Serial(interface)
 
-
 def signal_handler(signal, iframe):
     print ('\nTracker stopped...')
     sys.exit(0)
 signal.signal(signal.SIGINT, signal_handler)
-
 
 def encodeLonLat(lon, lat, symid, symbol):
     lat_deg = int(abs(lat) // 1)
