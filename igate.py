@@ -14,13 +14,12 @@ except IOError as e:
 
 config = ConfigParser()
 config.read('config.txt')
-callsign = config.get('DEFAULT', 'Callsign')
-passcode = config.get('DEFAULT', 'Passcode')
-interface = config.get('DEFAULT', 'Interface')
-
+callsign = config.get('IGATE', 'Callsign')
+passcode = config.get('IGATE', 'Passcode')
+interface = config.get('IGATE', 'Interface')
 
 def signal_handler(signal, iframe):
-    print ('Igate stopped....')
+    print ('\nIgate stopped....')
     sys.exit(0)
 signal.signal(signal.SIGINT, signal_handler)
 

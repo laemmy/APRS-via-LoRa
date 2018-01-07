@@ -18,10 +18,9 @@ except IOError as e:
 
 config = ConfigParser()
 config.read('config.txt')
-callsign = config.get('DEFAULT', 'TrackerSSID')
-passcode = config.get('DEFAULT', 'Passcode')
-interface = config.get('DEFAULT', 'Interface')
-
+callsign  = config.get('TRACKER', 'Callsign')
+interface = config.get('TRACKER', 'Interface')
+interval  = int(config.get('TRACKER', 'interval'))
 ser = serial.Serial(interface)
 
 def signal_handler(signal, iframe):
@@ -62,4 +61,4 @@ for new_data in gps_socket:
                 position + 'LoRa Reichweitentest\n'
             print (beacon)
             ser.write(beacon.encode())
-            time.sleep(60)
+            time.sleep(interval)

@@ -1,5 +1,9 @@
-[DEFAULT]
-Callsign = N0CALL
-Passcode = 123456
+[IGATE]
+Callsign  = N0CALL 
+Passcode  = 123456
 Interface = /dev/ttyS0
-TrackerSSID = N0CALL-5
+
+[TRACKER]
+Callsign  = N0CALL-5
+Interface = /dev/ttyS0
+interval  = 60
